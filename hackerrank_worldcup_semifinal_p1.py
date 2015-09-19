@@ -1,3 +1,7 @@
+# problem is simple, find cycles in the graph.
+# HOWEVER, time efficient is the KEY
+# use array, set, flags to speed up, store past result, avoid recalculate
+
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from operator import mul
 n = int(raw_input())
@@ -7,12 +11,12 @@ for i in range(n):
     [point, prob] = map(int, raw_input().strip().split(' '))
     pointers.append(point)
     probs.append(prob)
-citys = set([i for i in range(1,n+1)])
-cycle_flag = [0]*n
-cycle_count = 1
+citys = set([i for i in range(1,n+1)]) # set, remove unnecessary loops in the array
+cycle_flag = [0]*n # count which cycle the node is in
+cycle_count = 1 # count cycle number
 expected = 0.0
 while len(citys) > 0:
-    in_cycle = []
+    in_cycle = [] # store nodes in this cycles, for efficient calculation of products
     in_cycle_prob = []
     start = citys.pop()
     in_cycle.append(start)
