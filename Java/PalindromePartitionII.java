@@ -5,7 +5,7 @@ public int minCut(String s) {
     int len = s.length();
     boolean[][] flag = new boolean[len][len];
     int[] minArray = new int[len + 1];
-    minArray[0] = -1;
+    minArray[0] = -1; // -1 is for the whole string palindrome
     setFlag(flag, s);
     for (int i = 0; i < len; i++) {
         minArray[i + 1] = Integer.MAX_VALUE;
