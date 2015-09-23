@@ -33,7 +33,10 @@ class Solution(object):
                 result += [pre+[s[i:]] for pre in pre_result]
         return result
 
-# store all recursive results in a big list, avoid recompute, BUT still O(N^3)?        
+# store all recursive results in a big list, avoid recompute, BUT still O(N^3)? NO, it's exponential 2^n.
+# f(n) = f(n-1) + f(n-2) + ... + f(1)
+# f(n+1) = f(n) + (...) equals to f(n)
+# f(n+1)/f(n) = 2
 class Solution(object):
     def partition(self, s):
         """
