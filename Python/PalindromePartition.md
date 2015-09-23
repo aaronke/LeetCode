@@ -32,7 +32,7 @@ class Solution(object):
                 pre_result = self.helper(s[:i],table)
                 result += [pre+[s[i:]] for pre in pre_result]
         return result
-        
+
 # store all recursive results in a big list, avoid recompute, BUT still O(N^3)?        
 class Solution(object):
     def partition(self, s):
