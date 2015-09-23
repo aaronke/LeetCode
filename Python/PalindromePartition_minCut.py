@@ -1,3 +1,28 @@
+# store previous computed result in an array, avoid redundent computing
+    def minCut(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        n = len(s)
+        if n < 2:
+            return 0
+        table = [[False for i in range(n)] for j in range(n)]
+        for i in range(n):
+            table[i][i] = True
+        for i in range(n-1):
+            table[i][i+1] = s[i] == s[i+1]
+        for j in range(2,n):
+            for i in range(n-j):
+                table[i][i+j] = s[i] == s[i+j] and table[i+1][i+j-1]
+        minCut =[i for i in range(-1,n)]
+        for i in range(n):
+            for j in range(i,n):
+                if table[i][j]:
+                    minCut[j+1] = min(minCut[j+1],minCut[i]+1)
+        result = minCut[-1]
+        return result
+
 # similar idea with PalindromeI, TLE
 class Solution(object):
     def minCut(self, s):
