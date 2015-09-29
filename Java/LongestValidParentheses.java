@@ -1,4 +1,5 @@
 // DP without Stack, time limit exceeded
+// BUG in here, sub case is not complete
 public int longestValidParentheses(String s) {
         if (s == null || s.length() < 2)
             return 0;
@@ -21,6 +22,7 @@ public int longestValidParentheses(String s) {
                 else if (flag[i][i + j - 2] && s.charAt(i + j - 1) == '(' && s.charAt(i + j) == ')')
                     one = true;
                 // check: (...........)
+                # what if (())(())
                 else if (flag[i + 1][i + j - 1] && s.charAt(i) == '(' && s.charAt(i + j) == ')')
                     one = true;
                 // check: ()............
