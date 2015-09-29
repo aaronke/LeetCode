@@ -18,3 +18,16 @@ class Solution(object):
                 if self.helper(s, wordDict, i):
                    return True
         return False
+    # DP
+    def wordBreak(self, s, wordDict):
+        """
+        :type s: str
+        :type wordDict: Set[str]
+        :rtype: bool
+        """
+        table = [True] + [False]*len(s)
+        for i in range(len(s)):
+            for j in range(i+1,len(s)+1):
+                if s[i:j] in wordDict and table[i]:
+                    table[j] = True
+        return table[-1]
