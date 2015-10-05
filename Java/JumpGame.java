@@ -31,7 +31,7 @@ public boolean canJump(int[] A) {
     return true;
 }
 
-// O(NlgN)
+// O(N^2)
 public boolean canJump(int[] A) {
     boolean[] can = new boolean[A.length];
     can[0] = true;
