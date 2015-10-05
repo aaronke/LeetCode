@@ -1,4 +1,4 @@
-// O(NlgN), reachable from the first position? step + 1
+// O(N^2), reachable from the first position? step + 1
 public int jump(int[] A) {
     if (A == null || A.length == 0)
         return Integer.MAX_VALUE;
