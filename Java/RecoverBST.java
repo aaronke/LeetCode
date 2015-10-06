@@ -18,8 +18,8 @@ private void dfs(TreeNode root) {
     if (firstNode == null && root.val < previousNode.val)
         firstNode = previousNode;
     // not else if, take care when first and second node are neighbours, keep updating the second node
-    if (firstNode != null && root.val < previousNode.val)
-        secondNode = root;
+    if (firstNode != null && root.val < previousNode.val) // ACTUALLY, compare it with first node, if less, always set as second node
+        secondNode = root; // thinking in array
     previousNode = root;
     dfs(root.right);
 }
