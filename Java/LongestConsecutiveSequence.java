@@ -1,5 +1,6 @@
 // sorting cost O(NlgN) time and O(1) space
 // HashMap cost O(N) time and O(N) space
+// not O(N), this is two while loop inside the for loop, it's at least O(N*sth)
 public int longestConsecutive(int[] num) {
     if (num == null || num.length == 0)
         return 0;
