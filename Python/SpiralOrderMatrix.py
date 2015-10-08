@@ -20,11 +20,11 @@ class Solution(object):
             for i in range(cycle+1, m-cycle-1):
                 result.append(matrix[i][n-cycle-1])
             # down
-            if n-cycle-1 == cycle:
-                break            
             for i in range(n-2*cycle):
                 result.append(matrix[m-cycle-1][n-cycle-1-i])
             # left
+            if n-cycle-1 == cycle:
+                break  
             for i in range(1,m-2*cycle-1):
                 result.append(matrix[m-cycle-1-i][cycle])
         return result
