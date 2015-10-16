@@ -22,3 +22,27 @@ class Solution(object):
                     queue.append(node.right)
             result.append(this_level)
         return result
+
+    def levelOrderBottom(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+        from collections import deque
+        queue = deque()
+        result = []
+        if root == None:
+            return result
+        queue.append(root)
+        while len(queue) != 0:
+            this_level = []
+            size = len(queue)
+            for i in range(size):
+                node = queue.popleft()
+                this_level.append(node.val)
+                if node.left != None:
+                    queue.append(node.left)
+                if node.right != None:
+                    queue.append(node.right)
+            result.append(this_level)
+        return result[::-1]        
