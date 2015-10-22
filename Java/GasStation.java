@@ -1,5 +1,6 @@
 // 1, If car starts at A and can not reach B. Any station between A and B can not reach B.
 // 2, If the total number of gas is bigger than the total number of cost. There must be a solution.
+//# already know 2, just check the sum, than return -1 or not, no need to use total and former to check again. PLZ refer to the python solution for detail
 public int canCompleteCircuit(int[] gas, int[] cost) {
     if (gas == null || cost == null || gas.length != cost.length || gas.length == 0)
         return -1;
