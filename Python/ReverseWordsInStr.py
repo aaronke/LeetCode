@@ -22,6 +22,8 @@ class Solution(object):
                 cursor -= 1
             right = cursor
         return result[:-1]
+    
+    # reference for Java style: https://github.com/zkfairytale/LeetCode/blob/master/Java/ReverseWordsInStr.java
 
     # Python list style    
     def reverseWords(self, s):
