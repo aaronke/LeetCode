@@ -1,4 +1,19 @@
-class Solution(object): 
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        """
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        """
+        if root is None or root == p or root == q:
+            return root
+        left_LCA = self.lowestCommonAncestor(root.left, p, q)
+        right_LCA = self.lowestCommonAncestor(root.right, p, q)
+        if left_LCA and right_LCA:
+            return root
+        return left_LCA if left_LCA else right_LCA
+
     # double recursive, TLE
     def lowestCommonAncestor(self, root, p, q):
         """
