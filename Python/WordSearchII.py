@@ -1,4 +1,5 @@
 # use set() to speed up check in or not
+# trie is actually only a hierarchy hashmap
 class TrieNode(object):
     def __init__(self):
         self.children = {}
