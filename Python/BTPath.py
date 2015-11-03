@@ -26,3 +26,14 @@ class Solution(object):
                 self.dfs(root.left, path)
             if root.right is not None:
                 self.dfs(root.right, path)
+    # add and remove version, path is list[]
+    def dfs(self, root, path):
+        path.append(str(root.val))
+        if root.left is None and root.right is None:
+            self.result.append('->'.join(path))
+        else:
+            if root.left is not None:
+                self.dfs(root.left, path)
+            if root.right is not None:
+                self.dfs(root.right, path)
+        del path[-1]
