@@ -13,6 +13,17 @@ class Solution(object):
             if citations[n-h] >= h and (n-h-1 < 0 or citations[n-h-1] <= h):
                 return h
         return 0
+        
+        # binary search version
+        left, right = 1, n
+        while left <= right:
+            h = (left+right)/2
+            # no matter what, if c[n-h] >= h, always move left++ 
+            if citations[n-h] >= h:
+                left = h + 1
+            else:
+                right = h - 1
+        return right
 
 class Solution(object):
     # hash count, O(n)
