@@ -1,4 +1,4 @@
-// two passes, counting sort
+// two passes, this is not counting sort, but two pointers swap
 public void sortColors(int[] A) {
     if (A == null || A.length == 0)
         return;
