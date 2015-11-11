@@ -1,5 +1,5 @@
 # can only use elements once, start = i+1
-# remove dups: avoid starting from the same element
+# remove dups: make sure the coming element is not duplicated with previously removed, start != i
 def combinationSum2(self, candidates, target):
     """
     :type candidates: List[int]
@@ -19,8 +19,8 @@ def helper(self, candidates, target, one, start):
     if target < 0:
         return
     for i in range(start, len(candidates)):
-        # make sure the first element is not duplicated
-        if len(one) == 0 and i-1 >= 0 and candidates[i] == candidates[i-1]:
+        # make sure the coming element is not duplicated with previously removed
+        if i > start and candidates[i] == candidates[i-1]:
             continue
         one.append(candidates[i])
         self.helper(candidates, target-candidates[i], one, i+1)
