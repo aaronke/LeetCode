@@ -1,5 +1,6 @@
 # can only use elements once, start = i+1
 # remove dups: make sure the coming element is not duplicated with previously removed, start != i
+# the essense of checking i > start is that with the save recursion call, avoid dups
 def combinationSum2(self, candidates, target):
     """
     :type candidates: List[int]
